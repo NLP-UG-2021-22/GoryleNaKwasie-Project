@@ -34,6 +34,7 @@ body {
 
   }
   
+  
 
   .topnav a {
     float: left;
@@ -63,6 +64,73 @@ body {
     margin-right: auto;
 
 }
+
+/* SEARCHBAR */
+  
+.container {
+  width: 90%;
+  padding: 5%;
+  background-position: center;
+  background-size: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.searchbar {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  backdrop-filter: blur(4px) saturate(180%);
+}
+
+.searchbar input{
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+}
+
+.searchbar button img{
+  width: 25px;
+}
+
+.searchbar button {
+  border: 0;
+  border-radius: 80%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .searchbar {
+    height: 20px;
+    margin: 0 8px;
+  }
+
+  .searchbar input {
+    padding: 0 112px 0 50px;
+  }
+  .searchbar button {
+    right: 12px;
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+  .searchbar button img{
+    size: 10px;           /*to nie działa*/
+  }
+}
+ 
+/* SEARCHBAR */
+
 
 .back img {
     position: fixed;
