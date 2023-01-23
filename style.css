@@ -68,15 +68,33 @@ body {
 /* SEARCHBAR */
   
 .container {
-  width: 90%;
-  padding: 5%;
+  padding: 9%;
+  background-image: url(imgs/search-bg.jpg);
   background-position: center;
   background-size: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1rem;
+  position:relative;
   
 }
+
+.onpic {
+  background: transparent;
+  color: antiquewhite;
+  overflow: hidden;
+  width: 100%;
+  height: 7vw;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+  position: absolute;
+  top: 1rem;
+}
+
 
 .searchbar {
   width: 90%;
@@ -86,7 +104,8 @@ body {
   align-items: center;
   border-radius: 60px;
   padding: 10px 20px;
-  backdrop-filter: blur(4px) saturate(180%);
+  position: relative;
+  top: 1.5rem;
 }
 
 .searchbar input{
@@ -120,16 +139,17 @@ body {
     padding: 0 112px 0 50px;
   }
   .searchbar button {
-    right: 12px;
-    font-size: 14px;
-    padding: 8px 18px;
+    width: 30px;
+    height: 30px;
   }
   .searchbar button img{
-    size: 10px;           /*to nie działa*/
+    width: 20px;
+    height: 20px;
   }
 }
- 
+
 /* SEARCHBAR */
+
 
 
 .back img {
