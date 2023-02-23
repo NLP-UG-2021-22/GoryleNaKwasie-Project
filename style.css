@@ -44,17 +44,15 @@ body {
   font-size: 2vw;
 }
 
-
 .topnav a:hover {
-  border: 0.3vw solid black;
+  background-color: rgb(241, 174, 91);
+  color: rgb(123, 7, 7);
 }
 
-
-/* .topnav a.active { JESZCZE NIC NIE ROBI!!!!!
-  background-color: white;
-  color: black;
-} */
-
+.topnav a.active {
+  background-color: #000000;
+  color: rgb(204, 141, 39);
+}
 
 /* SEARCHBAR */
   
@@ -226,11 +224,17 @@ body {
   margin-right: auto;
 }
 
-.back img {
+.top {
+  text-decoration: none;
+  padding: 10px;
+  font-family: sans-serif;
+  color: #fff;
+  background: #000;
+  border-radius: 100px;
+}
+.back-to-top {
   position: fixed;
-  top: 90%;
-  left: 85%;
-  height: 10vw;
-  width: 10vw;
+  right: 2rem;
+  bottom: 2rem;
 }
 }
