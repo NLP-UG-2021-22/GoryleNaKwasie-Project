@@ -6,39 +6,42 @@
     <title>Little Cook's Helper</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=La+Belle+Aurore&family=Quicksand&display=swap" rel="stylesheet">
     <!-- Link Swiper's CSS -->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <!-- CSS -->
     <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
 
     <!--NAVBAR-->
-    <nav class="navbar">
-        <div class="brand-title">Name</div>
-        <a href="#" class="toggle-button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-        <div class="navbar-links">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Recipes</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#">Cooking Page</a>
         </div>
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Recipes</a></li>
+        </ul>
+      </div>
     </nav>
 
      <!--HEADER-->
     <section class="for-header">
         <div class="header">
-            <h1>Little Cook's Helper</h1>
+            <h1><span class="dif_font">Little</span> Cook's Helper</h1>
         </div>
     </section>
 
@@ -48,12 +51,12 @@
         <div class="container">
             <div class="slider mySwiper">
                 <div class="imgs-items swiper-wrapper">
-                    <div class="image swiper-slide"><img src="./imgs/breakfast.jpg" alt="breakfast"></div>
-                    <div class="image swiper-slide"><img src="./imgs/lunch.jpg" alt="lunch"></div>
-                    <div class="image swiper-slide"><img src="./imgs/dinner.jpg" alt="dinner"></div>
-                    <div class="image swiper-slide"><img src="./imgs/dessert.jpg" alt="dessert"></div>
-                    <div class="image swiper-slide"><img src="./images/image5.jpg" alt=""></div>
-                    <div class="image swiper-slide"><img src="./images/image6.jpg" alt=""></div>
+                    <div class="image swiper-slide"><img src="imgs/breakfast.jpg" alt="breakfast"></div>
+                    <div class="image swiper-slide"><img src="imgs/lunch.jpg" alt="lunch"></div>
+                    <div class="image swiper-slide"><img src="imgs/dinner.jpg" alt="dinner"></div>
+                    <div class="image swiper-slide"><img src="imgs/dessert.jpg" alt="dessert"></div>
+                    <div class="image swiper-slide"><img src="images/image5.jpg" alt=""></div>
+                    <div class="image swiper-slide"><img src="images/image6.jpg" alt=""></div>
                 </div>
                 <div class="swiper-button-next arrowButton right"></div>
                 <div class="swiper-button-prev arrowButton left"></div>
@@ -99,6 +102,37 @@
 
     <!-- SLIDER END -->
 
-    <div>
-        <h2>I like jam</h2>
+    <!-- MAIN BLOCK -->
+
+    <div class="message_box1">
+      <div class="message_box_left">
+        <h2>Welcome to our page!</h2>
+      </div>
     </div>
+    <div class="message_box2">
+      <div class="message_box_right">
+        <h2>Oh yeeeeeeeeeshdjhsfhshfjhj</h2>
+      </div>
+    </div>
+    <div class="message_box1">
+      <div class="message_box_left">
+        <h2>You're a stupid sandwich.....</h2>
+      </div>
+    </div>
+
+
+  
+    <!-- FOOTER -->
+
+    <footer id="contact">
+      <div class="intro"><h1>Contact</h1></div>
+      <div class="contact">
+        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        <a href="https://mobile.twitter.com/" class="fa fa-twitter"></a>
+        <a href="https://youtu.be/pon9YhVl-Ig" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/chef_little_helper/" class="fa fa-instagram"></a>
+      </div>
+      <div class="back">
+        <a href="#home"><img src="imgs/home.png" alt="home"></a>
+      </div>
+  </footer>
