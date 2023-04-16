@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Little Cook's Helper</title>
+    
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="icons/food.ico">
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=La+Belle+Aurore&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="recipes_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </head>
+
+  <body>
+
+    <!--NAVBAR-->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <b>Recipes</b>
+        </div>
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu">
+          <li><a href="home_index.html">Home</a></li>
+          <li><a href="about_index.html">About Us</a></li>
+          <li><a href="recipes_index.html">Recipes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+     <!--HEADER-->
+    <section class="for-header">
+        <div class="header">
+            <h1><span class="dif_font">Recent</span> Recipes</h1>
+        </div>
+    </section>
+
+   
+    <!-- MAIN BLOCK -->
+
+
+
+        <!-- CHAT BAR BLOCK -->
+        <section id="chat"></section>
+        <div class="chat-bar-collapsible">
+          
+            <button id="chat-button" type="button" class="collapsible">Chat with us!
+                <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+            </button>
+    
+            <div class="content">
+                <div class="full-chat-block">
+                    <!-- Message Container -->
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <!-- Messages -->
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            </div>
+    
+                            <!-- User input box -->
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg"
+                                        placeholder="Tap 'Enter' to send a message">
+                                    <p></p>
+                                </div>
+    
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                        onclick="heartButton()"></i>
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                        onclick="sendButton()"></i>
+                                </div>
+                            </div>
+    
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+  
+    <!-- FOOTER -->
+
+    <footer id="contact">
+      <div class="intro"><h1>Contact</h1></div>
+      <div class="contact">
+        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        <a href="https://mobile.twitter.com/" class="fa fa-twitter"></a>
+        <a href="https://youtu.be/pon9YhVl-Ig" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/chef_little_helper/" class="fa fa-instagram"></a>
+      </div>
+      <div>
+        <a href="#" class="top"><center><img src="imgs/home.png"></center></a>
+      </div>
+  </footer>
+  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="scripts/responses.js"></script>
+<script src="scripts/chat.js"></script>
+
+</html>
