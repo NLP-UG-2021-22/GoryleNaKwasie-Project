@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Little Cook's Helper</title>
+    
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="icons/food.ico">
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=La+Belle+Aurore&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </head>
+
+  <body>
+
+    <!--NAVBAR-->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <b>Cooking Page</b>
+        </div>
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu">
+          <li><a href="home_index.html">Home</a></li>
+          <li><a href="about_index.html">About Us</a></li>
+          <li><a href="recipes_index.html">Recipes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+     <!--HEADER-->
+    <section class="for-header">
+        <div class="header">
+            <h1><span class="dif_font">Little</span> Cook's Helper</h1>
+        </div>
+    </section>
+
+    <!-- CATEGORIES SLIDER -->
+
+    <section class="categories"> 
+        <div class="container">
+            <div class="slider mySwiper">
+                <div class="imgs-items swiper-wrapper">
+                    <div class="image swiper-slide"><img src="imgs/breakfast.jpg" alt="breakfast"></div>
+                    <div class="image swiper-slide"><img src="imgs/lunch.jpg" alt="lunch"></div>
+                    <div class="image swiper-slide"><img src="imgs/dinner.jpg" alt="dinner"></div>
+                    <div class="image swiper-slide"><img src="imgs/dessert.jpg" alt="dessert"></div>
+                    <div class="image swiper-slide"><img src="imgs/healthy.jpg" alt="healthy"></div>
+                    <div class="image swiper-slide"><img src="imgs/italian.jpg" alt="italian"></div>
+                </div>
+                <div class="swiper-button-next arrowButton right"></div>
+                <div class="swiper-button-prev arrowButton left"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      let swiper = new Swiper(".mySwiper", {
+        slidesPerGroup: 1,
+        loop: true,
+        fade: true,
+        grabCursor: true,
+        loopFillGroupWithBlank: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          500: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          868: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1000: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          1250: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+        },
+      });
+    </script>
+
+    <!-- SLIDER END -->
+
+    <!-- MAIN BLOCK -->
+
+
+    <div class="message_box1">
+      <div class="message_box_left">
+        <h2>Welcome to our page!</h2>
+      </div>
+    </div>
+    <div class="message_box2">
+      <div class="message_box_right">
+        <h2>Oh yeeeeeeeeeshdjhsfhshfjhj</h2>
+      </div>
+    </div>
+    <div class="message_box1">
+      <div class="message_box_left">
+        <h2>You're a stupid sandwich.....</h2>
+      </div>
+    </div>
+
+
+        <!-- CHAT BAR BLOCK -->
+        <section id="chat"></section>
+        <div class="chat-bar-collapsible">
+          
+            <button id="chat-button" type="button" class="collapsible">Chat with us!
+                <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+            </button>
+    
+            <div class="content">
+                <div class="full-chat-block">
+                    <!-- Message Container -->
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <!-- Messages -->
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            </div>
+    
+                            <!-- User input box -->
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg"
+                                        placeholder="Tap 'Enter' to send a message">
+                                    <p></p>
+                                </div>
+    
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                        onclick="heartButton()"></i>
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                        onclick="sendButton()"></i>
+                                </div>
+                            </div>
+    
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+  
+    <!-- FOOTER -->
+
+    <footer id="contact">
+      <div class="intro"><h1>Contact</h1></div>
+      <div class="contact">
+        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        <a href="https://mobile.twitter.com/" class="fa fa-twitter"></a>
+        <a href="https://youtu.be/pon9YhVl-Ig" class="fa fa-youtube"></a>
+        <a href="https://www.instagram.com/chef_little_helper/" class="fa fa-instagram"></a>
+      </div>
+      <div>
+        <a href="#" class="top"><center><img src="imgs/home.png"></center></a>
+      </div>
+  </footer>
+  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="scripts/responses.js"></script>
+<script src="scripts/chat.js"></script>
+
+</html>

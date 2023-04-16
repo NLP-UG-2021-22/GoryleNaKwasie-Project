@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Little Cook's Helper</title>
+    
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="icons/food.ico">
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=La+Belle+Aurore&family=Quicksand&display=swap" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="about_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  </head>
+
+  <body>
+
+    <!--NAVBAR-->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <b>About Us</b>
+        </div>
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="menu">
+          <li><a href="home_index.html">Home</a></li>
+          <li><a href="about_index.html">About Us</a></li>
+          <li><a href="recipes_index.html">Recipes</a></li>
+        </ul>
+      </div>
+    </nav>
+
+     <!--HEADER-->
+    <section class="for-header">
+        <div class="header">
+            <h1><span class="dif_font">About</span> Us</h1>
+        </div>
+    </section>
+
+   
+    <!-- MAIN BLOCK -->
+    <div class="row">
+    <div class="col">
+    </div>
+    <div class="col1">
+        <p>At Little Cook's Helper, we are a small, passionate team of food enthusiasts who love to cook and share our culinary creations with others. We are dedicated to helping people discover the joy of cooking by providing them with a simple and user-friendly platform to create and share their own recipes.</p>
+
+<p><b>Our Story</b></p>
+
+<p>Our journey began with a shared love for cooking and a desire to make the cooking experience more enjoyable and accessible to everyone. We realized that while there are many recipe apps available, there was a need for a unique and personalized platform that allows users to create and customize their own recipes based on their preferences, dietary restrictions, and available ingredients.
+
+With this vision in mind, we set out to create an app that empowers home cooks to express their creativity in the kitchen, experiment with flavors, and share their culinary masterpieces with the world.</p>
+
+<p><b>Our Mission</b></p>
+
+<p>Our mission is to inspire and enable home cooks to create delicious and personalized recipes that suit their unique tastes and lifestyles. We believe that cooking should be a fun and enjoyable experience, and our app is designed to make recipe creation simple, interactive, and engaging.
+
+We are committed to providing a platform that encourages creativity, fosters community, and promotes healthy and sustainable cooking practices. We strive to empower our users to embrace their inner chef, unleash their culinary imagination, and explore new flavors and ingredients in their cooking adventures.</p>
+
+<p><b>Our Team</b></p>
+
+<p>Our team is composed of passionate and experienced individuals with diverse backgrounds in food, technology, and design. We are united by our love for food and our shared vision of making cooking an enjoyable and personalized experience for everyone.
+
+Each member of our team brings a unique perspective and skillset to the table, from recipe development and nutritional expertise to app design and user experience. We work collaboratively, leveraging our strengths and expertise to create an app that meets the needs and desires of our users.</p>
+
+<p><b>Our Promise</b></p>
+
+<p>We are committed to delivering a high-quality app that is easy to use, visually appealing, and packed with features that enhance the recipe creation process. We continuously strive to improve and refine our app based on user feedback and evolving culinary trends.
+
+We are dedicated to protecting our users' privacy and ensuring the security of their personal information. We adhere to strict data privacy practices and comply with all applicable laws and regulations to safeguard our users' trust.
+</p>
+<p><b></b>Join Us on Our Culinary Adventure!</b></p>
+
+<p>We invite you to join us on our culinary adventure and become a part of our vibrant community of food lovers. Whether you are an experienced cook or just starting out, Our App is here to support and inspire you on your culinary journey.
+
+Thank you for choosing Our App as your recipe creation tool. We look forward to serving you with delicious recipes and a delightful cooking experience!
+
+Happy cooking,</p>
+
+<p><b>The LCH Team</b></p>
+</div>
+<div class="col">
+</div>
+</div>
+
+        <!-- CHAT BAR BLOCK -->
+        <section id="chat"></section>
+        <div class="chat-bar-collapsible">
+          
+            <button id="chat-button" type="button" class="collapsible">Chat with us!
+                <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+            </button>
+    
+            <div class="content">
+                <div class="full-chat-block">
+                    <!-- Message Container -->
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <!-- Messages -->
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                            </div>
+    
+                            <!-- User input box -->
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg"
+                                        placeholder="Tap 'Enter' to send a message">
+                                    <p></p>
+                                </div>
+    
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                        onclick="heartButton()"></i>
+                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                        onclick="sendButton()"></i>
+                                </div>
+                            </div>
+    
+                            <div id="chat-bar-bottom">
+                                <p></p>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+  
+    <!-- FOOTER -->
+
+
+    <div class="footer">
+
+        <a href="#" class="top"><center><img src="imgs/home.png"></center></a>
+        <div class="intro"><h1>Contact</h1></div>
+        <div class="contact">
+          <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+          <a href="https://mobile.twitter.com/" class="fa fa-twitter"></a>
+          <a href="https://youtu.be/pon9YhVl-Ig" class="fa fa-youtube"></a>
+          <a href="https://www.instagram.com/chef_little_helper/" class="fa fa-instagram"></a>
+        </div>
+      </div>
+
+
+  
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="scripts/responses.js"></script>
+<script src="scripts/chat.js"></script>
+
+</html>
