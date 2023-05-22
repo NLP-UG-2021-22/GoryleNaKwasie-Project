@@ -336,35 +336,54 @@
   
   /* CENTRAL BLOCK */
 
-p {
-    text-decoration: none;
-    color: #fff700;
-    font-size: 18px;
-    text-align: justify;
-    padding:1vw
-    }     
+  .message_box1 {
+    display: flex;
+  }
+  .message_box2 {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0;
+    margin: -8px;
+  }
 
-
-.row {
-    display: flex; /* equal height of the children */
+  
+  .message_box_left {
+    border: 0.35rem solid black;
+    border-radius: 20px; 
+    background: #9ab0f7;
+    margin: 40px;
+    padding: 0 20px 0 20px;
+    justify-content: flex-start;
   }
   
-  .col {
-    flex: 1; /* additionally, equal width */
-    
-    padding: 1em;
-    border: solid;
-    background-image: linear-gradient(rgba(45, 62, 159, 0.9),rgba(0,8,51,0.9)),url(imgs/background_about.jpg);
-    overflow-wrap: break-word;
+  .message_box_left h2 {
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
   }
-  .col1 {
-    flex: 3; /* additionally, equal width */
-    
-    padding: 1em;
-    border: solid;
-    background-image: linear-gradient(rgba(45, 62, 159, 0.9),rgba(0,8,51,0.9)),url(imgs/background_about.jpg);
-    overflow-wrap: break-word;
+  
+  .message_box_right {
+    border: 0.35rem solid black;
+    border-radius: 20px; 
+    background: #ffeead;
+    margin: 0 40px 0 40px;
+    padding: 0 20px 0 20px;
+    justify-content: flex-end;
   }
+
+  .message_box_right2 {
+    border: 0.35rem solid black;
+    border-radius: 20px; 
+    background: #ffeead;
+    margin: 40px;
+    padding: 0 20px 0 20px;
+    justify-content: flex-end;
+  }
+  
+  .message_box_right h2 {
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
   
   /* FOOTER */
   
