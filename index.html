@@ -17,29 +17,36 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
 
-    <!--NAVBAR-->
-    <nav>
-      <div class="nav-container">
-        <div class="logo">
-          <b>Cooking Page</b>
-        </div>
-        <div class="menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about_index.html">About Us</a></li>
-          <li><a href="recipes_index.html">Recipes</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="topnav" id="myTopnav">
+
+      <p><b>Cooking Page</b></p>
+      
+      <a href="index.html">Home</a>
+      <a href="about_index.html">About Us</a>
+      <a href="recipes_index.html">Recipes</a>
+      <a href="javascript:void(0);" class="icon" onclick="navBar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+<!-- navbar script -->
+<script>
+  function navBar() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
 
      <!--HEADER-->
     <section class="for-header">
@@ -66,6 +73,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -123,6 +131,13 @@
         <h2>Check out our social media, you idiot sandwich!</h2>
       </div>
     </div>
+
+    <!-- api test -->
+    <h1>TEST API</h1>
+    <div id="food-items">
+    
+    </div>
+    <script src="apitest.js"></script>
 
 
         <!-- CHAT BAR BLOCK -->
