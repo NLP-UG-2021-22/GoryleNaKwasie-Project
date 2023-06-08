@@ -133,60 +133,21 @@
     </div>
 
     <!-- api test -->
-    <h1>TEST API</h1>
-    <div id="food-items">
+    <div class="chat-popup" id="myForm">
+      <form class="form-container" id="ingForm">
+        <h1>Chat</h1>
     
+        <label for="msg"><b>Message</b></label>
+        <div id="ingInfo"></div>
+        <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" required></textarea>
+    
+        <button type="submit" class="btn">Send</button>
+      </form>
     </div>
-    <script src="apitest.js"></script>
+    <script src="api.js"></script>
 
 
-        <!-- CHAT BAR BLOCK -->
-        <section id="chat"></section>
-        <div class="chat-bar-collapsible">
-          
-            <button id="chat-button" type="button" class="collapsible">Chat with us!
-                <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
-            </button>
-    
-            <div class="content">
-                <div class="full-chat-block">
-                    <!-- Message Container -->
-                    <div class="outer-container">
-                        <div class="chat-container">
-                            <!-- Messages -->
-                            <div id="chatbox">
-                                <h5 id="chat-timestamp"></h5>
-                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
-                            </div>
-    
-                            <!-- User input box -->
-                            <div class="chat-bar-input-block">
-                                <div id="userInput">
-                                    <input id="textInput" class="input-box" type="text" name="msg"
-                                        placeholder="Tap 'Enter' to send a message">
-                                    <p></p>
-                                </div>
-    
-                                <div class="chat-bar-icons">
-                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
-                                        onclick="heartButton()"></i>
-                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
-                                        onclick="sendButton()"></i>
-                                </div>
-                            </div>
-    
-                            <div id="chat-bar-bottom">
-                                <p></p>
-                            </div>
-    
-                        </div>
-                    </div>
-    
-                </div>
-            </div>
-    
-        </div>
-  
+       
     <!-- FOOTER -->
 
     <footer id="contact">
@@ -203,8 +164,5 @@
   </footer>
   
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="scripts/responses.js"></script>
-<script src="scripts/chat.js"></script>
 
 </html>

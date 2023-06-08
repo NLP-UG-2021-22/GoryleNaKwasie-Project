@@ -1,26 +1,29 @@
-(function(){
+console.log("food api test");
 
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
-    .then(res=>res.json())
-    .then(data=> displayFoods(data))
-    
-    
-    
-    const displayFoods = foods =>{
-    const foodItemsDiv = document.getElementById('food-items');
-    
-    foods.meals.forEach(meal=>{
-    
-        const foodDiv = document.createElement('div');
-    
-        foodDiv.className = 'meal';
-        const foodInfo = `
-        <h3>${meal.strMeal}</h3>
-    
-        `;
-        foodDiv.innerHTML = foodInfo;
-        foodItemsDiv.appendChild(foodDiv);
+const ingForm = document.getElementById('ingForm');
+const ingName = document.getElementById('ingName');
+
+const ingInfo = document.getElementById('ingInfo');
+
+const urlBase = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=7902071ecb184d27915b2722ea862fcd&ingredients=${ingName}`
+
+ingForm.onsubmit = function(event) {
+    event.preventDefault();
+    const nameValue = ingName.value;
+    console.log(nameValue);
+    let url = urlBase;
+    url += nameValue.replaceAll(' ', '+')
+    console.log(url);
+
+    fetch(url)
+    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        const meal = response[0]['title'];
+        console.log(meal);
+        const mealPara = document.createElement('p');
+        mealPara.innerText = `${nameValue} can be used to cook ${meal}`;
+        ingInfo.appendChild(mealPara);
+
     });
-    }
-    
-    })();
+}
