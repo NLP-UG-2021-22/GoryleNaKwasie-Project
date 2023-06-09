@@ -155,8 +155,8 @@
         <!--User input-->
         <div class="textarea-container">
           <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" rows="3" wrap="soft" required></textarea>
-          <button type="submit" class="btn">Next</button>
-          <button type="reset" class="back">Back</button>
+          <button type="submit" class="btn">→</button>
+          <button type="reset" class="back">↺</button>
         </div>
         
         
@@ -180,7 +180,27 @@
         <a href="#" class="top"><center><img src="imgs/home.png"></center></a>
       </div>
   </footer>
-  
+
+  <style>
+    .responsive {
+      display: flex;
+      flex-direction: column;
+    }
+    .responsive .topnav a {
+      flex: 1;
+    }
+    /* Adjustments for small screens */
+    @media screen and (max-width: 600px) {
+      .topnav.responsive a:not(.icon) {
+        display: block;
+        text-align: center;
+      }
+      .form-container textarea {
+        width: 100%;
+      }
+    }
+  </style>
+
 </body>
 
 </html>
