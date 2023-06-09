@@ -254,21 +254,21 @@ section .categories{
 }
 
 .message_box_left h2 {
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Quicksand', sans-serif;
 }
 
 .message_box_right {
   border: 0.35rem solid black;
   border-radius: 20px; 
-  background: #ffeead;
+  background-color: rgba(249, 255, 128, 0.9);
   margin: 0 40px 0 40px;
   padding: 0 20px 0 20px;
   justify-content: flex-end;
 }
 
 .message_box_right h2 {
-  font-size: 30px;
+  font-size: 25px;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -349,14 +349,24 @@ justify-content: center;
 
 /* Add styles to the form container */
 .form-container {
-  width: 46%;
+  width: 50%;
   padding: 10px;
   background-color: rgba(45, 62, 159, 0.9);
   border: 7px solid black;
   margin: 0px 0 40px 0;
   border-radius: 10px; 
 }
-  
+
+/* Messages cointainer */
+.mess-container {
+  width: 65%;
+  padding: 8px;
+  background-color: rgba(243, 251, 83, 0.9);
+  border: 7px solid rgb(27, 6, 6);
+  margin: 20px 0 40px 0;
+  border-radius: 20px; 
+}
+
 .textarea-container {
   position: relative;
 }
@@ -366,6 +376,7 @@ justify-content: center;
   font-family: 'Quicksand', sans-serif;
   font-size: 43px;
   margin: 5px 0 15px 5px;
+  text-align: center;
 }
 
 /* Full-width textarea */

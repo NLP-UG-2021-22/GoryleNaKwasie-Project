@@ -123,7 +123,7 @@
     </div>
     <div class="message_box2">
       <div class="message_box_right">
-        <h2>Click on the pictures above to browse the recipes by category</h2>
+        <h2>Click on the pictures above to browse through our delicious and diversified recipes sorted by category!</h2>
       </div>
     </div>
     <div class="message_box1">
@@ -135,10 +135,24 @@
     <!-- api test -->
     <div class="chat-popup" id="myForm">
       <form class="form-container" id="ingForm">
-        <h1><b>Find a perfect recipe!</b></h1>
+        
+        <!--Chatbot heading-->
+        <h1><b>Find your perfect recipe!</b></h1>
 
-        <label style="color: white;" for="msg"><b>chatbot message</b></label>
-        <div id="ingInfo"></div>  <!-- in this div, recipies options are displayed-->
+        <!--Little Cook-->
+        <img id="littleChef" src="imgs/mario.png" width="60" height="50" alt="Our little chef">
+        <label style="color: white;  font-size: 23px;" for="msg"><b>Little Cook's Helper:</b></label>
+        
+        <!--Initial message box-->
+        <div id="initialMess" class="mess-container">
+          <p id="welcomeMess" style="color: rgb(19, 17, 17); font-size: 18px;">Hi! I'm here to help you find recipes for various occasions! In order to start a conversation with me, simply put your desired ingredients in the window below and I'll provide you with a list of possible dishes. Can't wait to cook together! <b>Let's go!</b> 
+          </p>
+        </div>
+
+        <!-- Recipes displayed-->
+        <div class="mess-container" id="ingInfo"></div>  
+
+        <!--User input-->
         <div class="textarea-container">
           <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" rows="3" wrap="soft" required></textarea>
           <button type="submit" class="btn">Next</button>
