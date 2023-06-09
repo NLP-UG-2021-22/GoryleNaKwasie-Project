@@ -132,7 +132,7 @@
       </div>
     </div>
 
-    <!-- api test -->
+    <!-- api -->
     <div class="chat-popup" id="myForm">
       <form class="form-container" id="ingForm">
         
@@ -150,20 +150,19 @@
         </div>
 
         <!-- Recipes displayed-->
-        <div class="mess-container" id="ingInfo"></div>  
+        <div class="mess-container" id="ingInfo" style="display:none"></div> 
 
         <!--User input-->
         <div class="textarea-container">
           <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" rows="3" wrap="soft" required></textarea>
-          <button type="submit" class="btn">→</button>
+          <button type="submit" class="btn" id="submitButton" onclick="showMessage()">→</button>
           <button type="reset" class="back">↺</button>
         </div>
         
         
       </form>
     </div>
-    <script src="apitest.js"></script>
-
+    <script src="apiScripts.js"></script>
 
        
     <!-- FOOTER -->
