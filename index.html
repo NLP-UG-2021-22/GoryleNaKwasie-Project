@@ -135,16 +135,20 @@
     <!-- api test -->
     <div class="chat-popup" id="myForm">
       <form class="form-container" id="ingForm">
-        <h1>Chat</h1>
-    
-        <label for="msg"><b>Message</b></label>
-        <div id="ingInfo"></div>
-        <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" required></textarea>
-    
-        <button type="submit" class="btn">Send</button>
+        <h1><b>Find a perfect recipe!</b></h1>
+
+        <label style="color: white;" for="msg"><b>chatbot message</b></label>
+        <div id="ingInfo"></div>  <!-- in this div, recipies options are displayed-->
+        <div class="textarea-container">
+          <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" rows="3" wrap="soft" required></textarea>
+          <button type="submit" class="btn">Next</button>
+          <button type="reset" class="back">Back</button>
+        </div>
+        
+        
       </form>
     </div>
-    <script src="api.js"></script>
+    <script src="apitest.js"></script>
 
 
        
