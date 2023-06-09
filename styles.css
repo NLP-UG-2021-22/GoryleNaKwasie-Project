@@ -117,6 +117,21 @@ body {
   bottom: 2rem;
 }
 }
+.btn {
+  font-size: 1em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.back {
+  font-size: 1em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 
 .for-header{
@@ -349,13 +364,23 @@ justify-content: center;
 
 /* Add styles to the form container */
 .form-container {
-  width: 50%;
   padding: 10px;
   background-color: rgba(45, 62, 159, 0.9);
   border: 7px solid black;
   margin: 0px 0 40px 0;
   border-radius: 10px; 
+  flex: 1;
+  box-sizing: border-box; /* Nowa reguła */
+  max-width: 675px; /* Nowa reguła - dostosuj wartość do potrzeb */
+  width: 100%; /* Nowa reguła - szerokość 100% na małych ekranach */
 }
+
+@media screen and (max-width: 675px) {
+  .form-container {
+    max-width: none; /* Usuń maksymalną szerokość */
+  }
+}
+
 
 /* Messages cointainer */
 .mess-container {
