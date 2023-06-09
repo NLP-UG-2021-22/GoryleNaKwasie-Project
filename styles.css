@@ -118,6 +118,21 @@ body {
 }
 }
 
+.btn {
+  font-size: 1em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.back {
+  font-size: 1em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .for-header{
   position: relative;
@@ -333,8 +348,8 @@ color: #fff700;
 /*CHATBOT*/
 
 .chat-popup {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* The popup chat - hidden by default */
@@ -347,14 +362,93 @@ justify-content: center;
   z-index: 9;
 }
 
-/* Add styles to the form container */
-.form-container {
-  width: 46%;
-  padding: 10px;
-  background-color: rgba(45, 62, 159, 0.9);
-  border: 7px solid black;
-  margin: 0px 0 40px 0;
-  border-radius: 10px; 
+  /* Add styles to the form container */
+  .form-container {
+    padding: 10px;
+    background-color: rgba(45, 62, 159, 0.9);
+    border: 7px solid black;
+    margin: 0px 0 40px 0;
+    border-radius: 10px; 
+    flex: 1;
+    box-sizing: border-box; /* Nowa reguła */
+    max-width: 675px; /* Nowa reguła - dostosuj wartość do potrzeb */
+    width: 100%; /* Nowa reguła - szerokość 100% na małych ekranach */
+  }
+
+  @media screen and (max-width: 675px) {
+    .form-container {
+      max-width: none; /* Usuń maksymalną szerokość */
+    }
+  }
+  
+.textarea-container {
+  position: relative;
+}
+
+.form-container h1 {
+  color:rgb(255, 243, 7);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 43px;
+  margin: 5px 0 15px 5px;
+}
+
+/* Full-width textarea */
+.textarea-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 2px 0;
+  font-size: 25px;
+  font-family: 'Quicksand', sans-serif;
+  color: black;
+  background: white;
+  resize: none;
+  box-sizing: border-box;
+  border: 3px solid black;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: white;
+  outline: none;
+  border: 3px solid black;
+}
+
+/* Set a style for the submit/login button */
+.textarea-container .btn {
+  background-color: rgb(255, 243, 7);
+  color: black;
+  border: 2px solid black;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  position: absolute;
+  top: 56%;
+  right: 15%;
+  height: 23%;
+  width: 10%;
+}
+
+/* Set a style for the reset/back button */
+.textarea-container .back {
+  background-color: rgb(255, 243, 7);
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+  border: 2px solid black;
+  font-size: 20px;
+  position: absolute;
+  top: 56%;
+  right: 3%;
+  height: 23%;
+  width: 10%;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
   
 .textarea-container {

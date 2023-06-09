@@ -1,172 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Little Cook's Helper</title>
-    
-    <!-- Icon -->
-    <link rel="icon" type="image/x-icon" href="icons/food.ico">
-    <!-- Link Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=La+Belle+Aurore&family=Quicksand&display=swap" rel="stylesheet">
-    <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Little Cook's Helper</title>
 
-  <body>
-
-    <div class="topnav" id="myTopnav">
-
-      <!-- <p><b>Cooking Page</b></p> -->
-      
-      <a href="recipes_index.html">Recipes</a>
-      <a href="about_index.html">About Us</a>
-      <a href="index.html">Home</a>
-      <a href="javascript:void(0);" class="icon" onclick="navBar()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-
-
-<!-- navbar script -->
-<script>
-  function navBar() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
-    } else {
-      x.className = "topnav";
+  <!-- Icon -->
+  <link rel="icon" type="image/x-icon" href="icons/food.ico">
+  <!-- Link Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=La+Belle+Aurore&family=Quicksand&display=swap" rel="stylesheet">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .responsive {
+      display: flex;
+      flex-direction: column;
     }
-  }
+    .responsive .topnav a {
+      flex: 1;
+    }
+    /* Adjustments for small screens */
+    @media screen and (max-width: 600px) {
+      .topnav.responsive a:not(.icon) {
+        display: block;
+        text-align: center;
+      }
+      .form-container textarea {
+        width: 100%;
+      }
+      .image img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <!-- <p><b>Cooking Page</b></p> -->
+    <a href="recipes_index.html">Recipes</a>
+    <a href="about_index.html">About Us</a>
+    <a href="index.html">Home</a>
+    <a href="javascript:void(0);" class="icon" onclick="navBar()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <!-- navbar script -->
+  <script>
+    function navBar() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
   </script>
 
-     <!--HEADER-->
-    <section class="for-header">
-        <div class="header">
-            <h1><span class="dif_font">Little</span> Cook's Helper</h1>
+  <!-- HEADER -->
+  <section class="for-header">
+    <div class="header">
+      <h1><span class="dif_font">Little</span> Cook's Helper</h1>
+    </div>
+  </section>
+
+  <!-- CATEGORIES SLIDER -->
+  <section class="categories">
+    <div class="container">
+      <div class="slider mySwiper">
+        <div class="imgs-items swiper-wrapper">
+          <div class="image swiper-slide"><img src="imgs/breakfast.jpg" alt="breakfast"></div>
+          <div class="image swiper-slide"><img src="imgs/lunch.jpg" alt="lunch"></div>
+          <div class="image swiper-slide"><img src="imgs/dinner.jpg" alt="dinner"></div>
+          <div class="image swiper-slide"><img src="imgs/dessert.jpg" alt="dessert"></div>
+          <div class="image swiper-slide"><img src="imgs/healthy.jpg" alt="healthy"></div>
+          <div class="image swiper-slide"><img src="imgs/italian.jpg" alt="italian"></div>
         </div>
-    </section>
+        <div class="swiper-button-next arrowButton right"></div>
+        <div class="swiper-button-prev arrowButton left"></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- CATEGORIES SLIDER -->
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-    <section class="categories"> 
-        <div class="container">
-            <div class="slider mySwiper">
-                <div class="imgs-items swiper-wrapper">
-                    <div class="image swiper-slide"><img src="imgs/breakfast.jpg" alt="breakfast"></div>
-                    <div class="image swiper-slide"><img src="imgs/lunch.jpg" alt="lunch"></div>
-                    <div class="image swiper-slide"><img src="imgs/dinner.jpg" alt="dinner"></div>
-                    <div class="image swiper-slide"><img src="imgs/dessert.jpg" alt="dessert"></div>
-                    <div class="image swiper-slide"><img src="imgs/healthy.jpg" alt="healthy"></div>
-                    <div class="image swiper-slide"><img src="imgs/italian.jpg" alt="italian"></div>
-                </div>
-                <div class="swiper-button-next arrowButton right"></div>
-                <div class="swiper-button-prev arrowButton left"></div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      let swiper = new Swiper(".mySwiper", {
-        slidesPerGroup: 1,
-        loop: true,
-        fade: true,
-        grabCursor: true,
-        loopFillGroupWithBlank: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+  <!-- Initialize Swiper -->
+  <script>
+    let swiper = new Swiper(".mySwiper", {
+      slidesPerGroup: 1,
+      loop: true,
+      fade: true,
+      grabCursor: true,
+      loopFillGroupWithBlank: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        500: {
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
-        breakpoints: {
-          500: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          868: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1000: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1250: {
-            slidesPerView: 5,
-            spaceBetween: 30,
-          },
+        868: {
+          slidesPerView: 3,
+          spaceBetween: 30,
         },
-      });
-    </script>
+        1000: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+        1250: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+      },
+    });
+  </script>
 
-    <!-- SLIDER END -->
+  <!-- SLIDER END -->
 
-    <!-- MAIN BLOCK -->
-
-
-    <div class="message_box1">
-      <div class="message_box_left">
-        <h2>Welcome to our page!</h2>
-      </div>
+  <!-- MAIN BLOCK -->
+  <div class="message_box1">
+    <div class="message_box_left">
+      <h2>Welcome to our page!</h2>
     </div>
-    <div class="message_box2">
-      <div class="message_box_right">
-        <h2>Click on the pictures above to browse the recipes by category</h2>
-      </div>
+  </div>
+  <div class="message_box2">
+    <div class="message_box_right">
+      <h2>Click on the pictures above to browse the recipes by category</h2>
     </div>
-    <div class="message_box1">
-      <div class="message_box_left">
-        <h2>Check out our social media, you idiot sandwich!</h2>
-      </div>
+  </div>
+  <div class="message_box1">
+    <div class="message_box_left">
+      <h2>Check out our social media, you idiot sandwich!</h2>
     </div>
+  </div>
 
-    <!-- api test -->
-    <div class="chat-popup" id="myForm">
-      <form class="form-container" id="ingForm">
-        <h1><b>Find a perfect recipe!</b></h1>
+  <!-- api test -->
+  <div class="chat-popup" id="myForm">
+    <form class="form-container" id="ingForm">
+      <h1><b>Find a perfect recipe!</b></h1>
+  
+      <label style="color: white;" for="msg"><b>chatbot message</b></label>
+      <div id="ingInfo"></div>  <!-- in this div, recipes options are displayed-->
+      <div class="textarea-container">
+        <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" rows="3" wrap="soft" required></textarea>
+        <button type="submit" class="btn">→</button>
+        <button type="reset" class="back">↺</button>
+      </div>
+    </form>
+  </div>
+  <script src="apitest.js"></script>
+  
 
-        <label style="color: white;" for="msg"><b>chatbot message</b></label>
-        <div id="ingInfo"></div>  <!-- in this div, recipies options are displayed-->
-        <div class="textarea-container">
-          <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" rows="3" wrap="soft" required></textarea>
-          <button type="submit" class="btn">Next</button>
-          <button type="reset" class="back">Back</button>
-        </div>
-        
-        
-      </form>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="intro"><h1>Contact</h1></div>
+    <div class="contact">
+      <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+      <a href="https://mobile.twitter.com/" class="fa fa-twitter"></a>
+      <a href="https://youtu.be/pon9YhVl-Ig" class="fa fa-youtube"></a>
+      <a href="https://www.instagram.com/chef_little_helper/" class="fa fa-instagram"></a>
     </div>
-    <script src="apitest.js"></script>
-
-
-       
-    <!-- FOOTER -->
-
-    <footer id="contact">
-      <div class="intro"><h1>Contact</h1></div>
-      <div class="contact">
-        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
-        <a href="https://mobile.twitter.com/" class="fa fa-twitter"></a>
-        <a href="https://youtu.be/pon9YhVl-Ig" class="fa fa-youtube"></a>
-        <a href="https://www.instagram.com/chef_little_helper/" class="fa fa-instagram"></a>
-      </div>
-      <div>
-        <a href="#" class="top"><center><img src="imgs/home.png"></center></a>
-      </div>
+    <div>
+      <a href="#" class="top"><center><img src="imgs/home.png"></center></a>
+    </div>
   </footer>
   
 </body>
-
 </html>
+
