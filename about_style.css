@@ -364,7 +364,7 @@
   .message_box_right {
     border: 0.35rem solid black;
     border-radius: 20px; 
-    background: #ffeead;
+    background: rgba(249, 255, 128, 0.9);
     margin: 0 40px 0 40px;
     padding: 0 20px 0 20px;
     justify-content: flex-end;
@@ -373,7 +373,7 @@
   .message_box_right2 {
     border: 0.35rem solid black;
     border-radius: 20px; 
-    background: #ffeead;
+    background: rgba(249, 255, 128, 0.9);
     margin: 40px;
     padding: 0 20px 0 20px;
     justify-content: flex-end;
