@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Little Cook's Helper</title>
-    
+
     <!-- Icon -->
     <link rel="icon" type="image/x-icon" href="icons/food.ico">
     <!-- Link Google Font -->
@@ -26,7 +26,7 @@
     <div class="topnav" id="myTopnav">
 
       <!-- <p><b>Cooking Page</b></p> -->
-      
+
       <a href="recipes_index.html">Recipes</a>
       <a href="about_index.html">About Us</a>
       <a href="index.html">Home</a>
@@ -57,7 +57,7 @@
 
     <!-- CATEGORIES SLIDER -->
 
-    <section class="categories"> 
+    <section class="categories">
         <div class="container">
             <div class="slider mySwiper">
                 <div class="imgs-items swiper-wrapper">
@@ -164,38 +164,35 @@
     <!-- api -->
     <div class="chat-popup" id="myForm">
       <form class="form-container" id="ingForm">
-        
+
         <!--Chatbot heading-->
         <h1><b>Find your perfect recipe!</b></h1>
 
         <!--Little Cook-->
         <img id="littleChef" src="imgs/mario.png" width="60" height="50" alt="Our little chef">
         <label style="color: white;  font-size: 23px;" for="msg"><b>Little Cook's Helper:</b></label>
-        
+
         <!--Initial message box-->
         <div id="initialMess" class="mess-container">
-          <p id="welcomeMess" style="color: rgb(19, 17, 17); font-size: 18px;">Hi! I'm here to help you find recipes for various occasions! In order to start a conversation with me, simply put your desired ingredients in the window below and I'll provide you with a list of possible dishes. Can't wait to cook together! <b>Let's go!</b> 
+          <p id="welcomeMess" style="color: rgb(19, 17, 17); font-size: 18px;">Hi! I'm here to help you find recipes for various occasions! In order to start a conversation with me, simply put your desired ingredients in the window below and I'll provide you with a list of possible dishes. Can't wait to cook together! <b>Let's go!</b>
           </p>
         </div>
 
         <!-- Recipes displayed-->
-        <div class="mess-container" id="ingInfo" style="display:none"></div> 
-
+        <div class="mess-container hidden" id="ingInfo">
+          <div id="mealsList"></div>
+          <button id="nextRecipesButton">Show next recipes</button>
+        </div>
         <!--User input-->
         <div class="textarea-container">
           <textarea id="ingName" placeholder="Type the name of your ingredient" name="msg" rows="3" wrap="soft" required></textarea>
-          <button type="submit" class="btn" id="submitButton" onclick="showMessage()">→</button>
-          <button type="reset" class="back">↺</button>
+          <button type="submit" class="btn" id="submitButton">→</button>
+          <button id="resetButton" type="reset" class="back">↺</button>
         </div>
-        
-        
       </form>
     </div>
-    <script src="apiScripts.js"></script>
 
-       
     <!-- FOOTER -->
-
     <footer id="contact">
       <div class="intro"><h1>Contact</h1></div>
       <div class="contact">
@@ -228,7 +225,7 @@
       }
     }
   </style>
-
+  <script src="apiScripts.js"></script>
 </body>
 
 </html>

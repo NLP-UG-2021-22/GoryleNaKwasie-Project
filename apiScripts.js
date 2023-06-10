@@ -1,94 +1,133 @@
-
-function showMessage(){
-    var T = document.getElementById("ingInfo"),
-    displayValue = "";
-    if (T.style.display == "")
-        displayValue = "none";
-
-    T.style.display = displayValue;
-
-}
-
-
+// DOM elements
 const submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", showMeals);
-// submitButton.addEventListener("click", changeText);
-console.log("food api test");
-
 const ingForm = document.getElementById('ingForm');
 const ingName = document.getElementById('ingName');
-
-// function changeText(){
-//     const mainResponse = document.getElementById("mainResponse");
-//     mainResponse.innerHTML = "Thanks, let's see what we can cook up";
-// } //this does not work for some reason
-
-
-
+const mainResponse = document.getElementById("welcomeMess");
 const ingInfo = document.getElementById('ingInfo');
-const urlBase = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=670611b28aa640a59d2348130d1a7067&ingredients=${ingName}`;
-// const urlSteps = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=670611b28aa640a59d2348130d1a7067`;
+const mealsList = document.getElementById('mealsList');
+const resetButton = document.getElementById("resetButton");
+const nextButton = document.getElementById('nextRecipesButton');
 
-const meals = [];
+// Event listeners
+submitButton.addEventListener("click", fetchMeals);
+nextButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    showMeals(alreadyShown);
+});
+resetButton.addEventListener("click", resetChat);
 
-function showMeals(event) {
-    
+// Variables necessary for app functionality
+const urlBase = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=7902071ecb184d27915b2722ea862fcd&ingredients=";
+let meals = [];
+let alreadyShown = 0;
+
+// Helper functions
+function changeMainResponseText(text){
+    mainResponse.innerHTML = text;
+}
+
+function resetChat() {
+    mealsList.innerHTML = "";
+    meals = [];
+    alreadyShown = 0;
+    ingInfo.classList.add('hidden');
+    changeMainResponseText("Hi! I'm here to help you find recipes for various occasions! In order to start a conversation with me, simply put your desired ingredients in the window below and I'll provide you with a list of possible dishes. Can't wait to cook together! <b>Let's go!</b>");
+}
+
+// Meal lists:
+
+function prepareMealObject(inputObj) {
+    return {
+        title: inputObj['title'],
+        img: inputObj['image'],
+        id: inputObj['id']
+    }
+}
+
+function showMeals(idx) {
+    if (idx >= meals.length) {
+        console.log("All meals are shown!");
+        return;
+    };
+    let endIdx = idx + 3 < meals.length ? idx + 3 : meals.length;
+    for (let i = idx; i < endIdx; i++) {
+        appendMealDataToMealsList(meals[i]);
+    }
+    alreadyShown += (endIdx - idx);
+    if (alreadyShown >= meals.length) {
+        nextButton.classList.add('hidden');
+    }
+}
+
+function appendMealDataToMealsList(mealObj) {
+    const mealPara = document.createElement('p');
+    mealPara.innerText = `Your ingredients can be used to cook ${mealObj.title}`;
+    const mealImg = document.createElement('img');
+    mealImg.src = mealObj.img;
+    const mealStepsTrigger = document.createElement('button');
+    mealStepsTrigger.innerText = "Show steps for this meal!";
+    mealStepsTrigger.addEventListener('click', (e) => {e.preventDefault(); fetchSteps(mealObj.id)});
+    mealStepsTrigger.classList.add('mealStepsTriggerButton');
+    mealStepsTrigger.setAttribute('id', mealObj.id.toString());
+    mealsList.appendChild(mealPara);
+    mealsList.appendChild(mealImg);
+    mealsList.appendChild(mealStepsTrigger);
+}
+
+function fetchMeals(event) {
     event.preventDefault();
     const nameValue = ingName.value;
     let url = urlBase;
-    url += nameValue.replaceAll(' ', ',+')
-    console.log(url);
+    url += nameValue.replaceAll(' ', ',+');
 
     fetch(url)
     .then(response => response.json())
     .then(response => {
-        for (let i = 0; i <= 2; i++) {
-            const mealObj = {};
-            mealObj['title'] = response[i]['title'];
-            mealObj['img'] = response[i]['image'];
-            mealObj['id'] = response[i]['id'];
-            console.log(mealObj['id']);
-            meals.push(mealObj);
-            const urlSteps = `https://api.spoonacular.com/recipes/${mealObj['id']}/analyzedInstructions?apiKey=670611b28aa640a59d2348130d1a7067`;
-            console.log(urlSteps);
-            fetch(urlSteps)
-            .then(response => response.json())
-            .then(response => {
-                console.log(response);
-                console.log(response[0]['steps']); //don't know how to access the individual steps
-            })
-
+        if (response.length > 0) {
+            changeMainResponseText("Thanks, let's see what we can cook up");
+            ingInfo.classList.remove('hidden');
+            meals = response.map(el => prepareMealObject(el));
+            showMeals(0);
+        } else {
+            console.log("Nothing found!");
         }
-            meals.forEach(dish => {
-                const mealPara = document.createElement('p');
-                mealPara.innerText = `Your ingredients can be used to cook ${dish.title}`;
-                const mealImg = document.createElement('img');
-                mealImg.src = dish.img;
-                ingInfo.appendChild(mealPara);
-                ingInfo.appendChild(mealImg);
-
-
-            })
-       
-        const nextBtn = document.createElement('button');
-        nextBtn.style.backgroundColor = 'rgb(255, 243, 7)';
-        nextBtn.style.color = 'black';
-        nextBtn.style.border = '2px solid black';
-        nextBtn.style.fontFamily = 'Quicksand, sans-serif'
-        nextBtn.innerHTML = "Show next recipes";
-        nextBtn.onclick = function() {
-            alert("no idea how to make this button actually show next 3 recipes");
-          };
-        ingInfo.appendChild(nextBtn);
-
     });
-
-document.getElementById('submitButton').disabled = true;
 }
 
-const resetButton = document.getElementById("resetButton");
-resetButton.addEventListener("click", resetChat);
+// Meal preparation steps:
 
-function resetChat() {
-    window.location.reload(); //I had no idea how to make reset jsut the form
+function buildAStep(ingredients, equipment, step) {
+    return `<p>
+    <h5>Ingredients:</h5>
+    <span>${ingredients && ingredients.length > 0 ? ingredients.map(x => x.name).join(", ") : "None"}</span>
+    <h5>Equipment:</h5>
+    <span>${equipment && equipment.length > 0 ? equipment.map(x => x.name).join(", ") : "None"}</span>
+    <h5>Instruction:</h5>
+    <span>${step}</span>
+    </p>`;
+}
+
+function addStepsToDOM(id, currentSteps) {
+    const currentButton = document.getElementById(id.toString());
+    const stepsContainer = document.createElement('div');
+    let stepsHTML = "";
+    currentSteps.steps.forEach((step, idx) => {
+        stepsHTML += `<h4>Step ${idx+1}</h4>`
+        stepsHTML += buildAStep(step.ingredients, step.equipment, step.step);
+    });
+    stepsContainer.innerHTML = stepsHTML;
+    currentButton.after(stepsContainer);
+    currentButton.setAttribute('disabled', true);
+}
+
+function fetchSteps(id) {
+    const urlSteps = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=7902071ecb184d27915b2722ea862fcd`;
+    console.log(urlSteps);
+    fetch(urlSteps)
+    .then(response => response.json())
+    .then(response => {
+        // console.log(response);
+        currentSteps = response[0];
+        addStepsToDOM(id, currentSteps);
+    });
 }
