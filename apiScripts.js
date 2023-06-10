@@ -26,7 +26,8 @@ const ingName = document.getElementById('ingName');
 
 
 const ingInfo = document.getElementById('ingInfo');
-const urlBase = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=670611b28aa640a59d2348130d1a7067&ingredients=${ingName}`
+const urlBase = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=670611b28aa640a59d2348130d1a7067&ingredients=${ingName}`;
+// const urlSteps = `https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=670611b28aa640a59d2348130d1a7067`;
 
 const meals = [];
 
@@ -45,7 +46,18 @@ function showMeals(event) {
             const mealObj = {};
             mealObj['title'] = response[i]['title'];
             mealObj['img'] = response[i]['image'];
+            mealObj['id'] = response[i]['id'];
+            console.log(mealObj['id']);
             meals.push(mealObj);
+            const urlSteps = `https://api.spoonacular.com/recipes/${mealObj['id']}/analyzedInstructions?apiKey=670611b28aa640a59d2348130d1a7067`;
+            console.log(urlSteps);
+            fetch(urlSteps)
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                console.log(response[0]['steps']); //don't know how to access the individual steps
+            })
+
         }
             meals.forEach(dish => {
                 const mealPara = document.createElement('p');
@@ -54,6 +66,8 @@ function showMeals(event) {
                 mealImg.src = dish.img;
                 ingInfo.appendChild(mealPara);
                 ingInfo.appendChild(mealImg);
+
+
             })
        
         const nextBtn = document.createElement('button');
@@ -63,11 +77,18 @@ function showMeals(event) {
         nextBtn.style.fontFamily = 'Quicksand, sans-serif'
         nextBtn.innerHTML = "Show next recipes";
         nextBtn.onclick = function() {
-            alert("no idea what to do next");
+            alert("no idea how to make this button actually show next 3 recipes");
           };
         ingInfo.appendChild(nextBtn);
 
     });
 
+document.getElementById('submitButton').disabled = true;
+}
 
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", resetChat);
+
+function resetChat() {
+    window.location.reload(); //I had no idea how to make reset jsut the form
 }
