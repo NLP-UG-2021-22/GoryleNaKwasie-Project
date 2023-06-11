@@ -22,31 +22,26 @@
 
   <body>
 
-    <!--NAVBAR-->
-    <nav>
-      <div class="nav-container">
-        <div class="logo">
-          <b>About Us</b>
-        </div>
-        <div class="menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about_index.html">About Us</a></li>
-          <li><a href="recipes_index.html">Recipes</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="topnav" id="myTopnav">
+      <a href="about_index.html">About Us</a>
+      <a href="index.html">Home</a>
+      <a href="javascript:void(0);" class="icon" onclick="navBar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
-     <!--HEADER-->
-    <section class="for-header">
-        <div class="header">
-            <h1><span class="dif_font">About</span> Us</h1>
-        </div>
-    </section>
+
+<!-- navbar script -->
+<script>
+  function navBar() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
 
    
     <!-- MAIN BLOCK -->
@@ -141,53 +136,7 @@
     </div>
 
 
-        <!-- CHAT BAR BLOCK -->
-        <section id="chat"></section>
-        <div class="chat-bar-collapsible">
-          
-            <button id="chat-button" type="button" class="collapsible">Chat with us!
-                <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
-            </button>
-    
-            <div class="content">
-                <div class="full-chat-block">
-                    <!-- Message Container -->
-                    <div class="outer-container">
-                        <div class="chat-container">
-                            <!-- Messages -->
-                            <div id="chatbox">
-                                <h5 id="chat-timestamp"></h5>
-                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
-                            </div>
-    
-                            <!-- User input box -->
-                            <div class="chat-bar-input-block">
-                                <div id="userInput">
-                                    <input id="textInput" class="input-box" type="text" name="msg"
-                                        placeholder="Tap 'Enter' to send a message">
-                                    <p></p>
-                                </div>
-    
-                                <div class="chat-bar-icons">
-                                    <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
-                                        onclick="heartButton()"></i>
-                                    <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
-                                        onclick="sendButton()"></i>
-                                </div>
-                            </div>
-    
-                            <div id="chat-bar-bottom">
-                                <p></p>
-                            </div>
-    
-                        </div>
-                    </div>
-    
-                </div>
-            </div>
-    
-        </div>
-  
+        
     <!-- FOOTER -->
 
 
