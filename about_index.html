@@ -22,31 +22,26 @@
 
   <body>
 
-    <!--NAVBAR-->
-    <nav>
-      <div class="nav-container">
-        <div class="logo">
-          <b>About Us</b>
-        </div>
-        <div class="menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about_index.html">About Us</a></li>
-          <li><a href="recipes_index.html">Recipes</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="topnav" id="myTopnav">
+      <a href="about_index.html">About Us</a>
+      <a href="index.html">Home</a>
+      <a href="javascript:void(0);" class="icon" onclick="navBar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
-     <!--HEADER-->
-    <section class="for-header">
-        <div class="header">
-            <h1><span class="dif_font">About</span> Us</h1>
-        </div>
-    </section>
+
+<!-- navbar script -->
+<script>
+  function navBar() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+  </script>
 
    
     <!-- MAIN BLOCK -->
@@ -139,6 +134,7 @@
         <h2>The LCH Team</h2>
       </div>
     </div>
+
 
     <!-- FOOTER -->
 
